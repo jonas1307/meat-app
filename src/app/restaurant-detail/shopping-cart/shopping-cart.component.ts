@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from './shopping-cart.service';
+import { CartItem } from './shopping-cart-item.model';
 
 @Component({
   selector: 'mt-shopping-cart',
@@ -20,4 +21,15 @@ export class ShoppingCartComponent implements OnInit {
     return this.shoppingCartService.total()
   }
 
+  clear() {
+    this.shoppingCartService.clear()
+  }
+
+  addItem(item: any) {
+    this.shoppingCartService.addItem(item)
+  }
+
+  removeItem(item: any) {
+    this.shoppingCartService.removeItem(item)
+  }
 }
