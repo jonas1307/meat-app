@@ -6,6 +6,10 @@ import { CartItem } from "../restaurant-detail/shopping-cart/shopping-cart-item.
 export class OrderService {
   constructor(private cartService: ShoppingCartService) { }
 
+  itemsValue(): number {
+    return this, this.cartService.total()
+  }
+
   cartItems(): CartItem[] {
     return this.cartService.items
   }
