@@ -16,15 +16,15 @@
     <tbody>
       <tr *ngFor="let item of items">
         <td class="text-center">
-          <a (click)="emitDecreaseQuantity(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a> {{item.quantity}}
-          <a (click)="emitemitIncreaseQuantity(item)" class="btn btn-sm"><i class="fa fa-plus"></i></a>
+          <a (click)="emitDecreaseQty(item)" class="btn btn-sm"><i class="fa fa-minus"></i></a> {{item.quantity}}
+          <a (click)="emitIncreaseQty(item)" class="btn btn-sm"><i class="fa fa-plus"></i></a>
         </td>
         <td>{{item.menuItem.name}}</td>
 
         <td>{{item.menuItem.description}}</td>
         <td class="text-right">{{item.value() | currency: 'BRL': true}}</td>
         <td class="text-right">
-          <a (click)="emitRemove(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+          <a (click)="emitRemoveItem(item)" class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
         </td>
       </tr>
     </tbody>

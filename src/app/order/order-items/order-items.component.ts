@@ -9,9 +9,9 @@ export class OrderItemsComponent implements OnInit {
 
   @Input() items: CartItem[]
 
-  @Output() increaseQuantity = new EventEmitter<CartItem>()
+  @Output() increaseQty = new EventEmitter<CartItem>()
 
-  @Output() decreaseQuantity = new EventEmitter<CartItem>()
+  @Output() decreaseQty = new EventEmitter<CartItem>()
 
   @Output() removeItem = new EventEmitter<CartItem>()
 
@@ -20,15 +20,15 @@ export class OrderItemsComponent implements OnInit {
   ngOnInit() {
   }
 
-  emitIncreaseQuantity(item: CartItem) {
-    this.increaseQuantity.emit(item)
+  emitIncreaseQty(item: CartItem) {
+    this.increaseQty.emit(item)
   }
 
-  emitDecreaseQuantity(item: CartItem) {
-    this.decreaseQuantity.emit(item)
+  emitDecreaseQty(item: CartItem) {
+    this.decreaseQty.emit(item)
   }
 
-  emitRemove(item: CartItem) {
+  emitRemoveItem(item: CartItem) {
     this.removeItem.emit(item)
   }
 }
