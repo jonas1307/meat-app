@@ -1,7 +1,7 @@
-<div *ngIf="!items" class="col-xs-12">
-  <p>Não há itens no seu carrinho. Que tal começar por <a [routerLink]="['/restaurants']">aqui?</a></p>
+<div *ngIf="items.length === 0" class="col-xs-12">
+  <p>Não há itens no seu carrinho. Que tal começar por <a [routerLink]="['/restaurants']">aqui</a>?</p>
 </div>
-<div *ngIf="items" class="col-xs-12 table-responsive">
+<div *ngIf="items.length > 0" class="col-xs-12 table-responsive">
 
   <table class="table table-striped">
     <thead>
