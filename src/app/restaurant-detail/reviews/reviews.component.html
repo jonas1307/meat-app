@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-sm-6" *ngFor="let review of reviews | async">
 
-  <div class="box box-solid">
+  <div class="box box-solid" [@reviewsAppeared]='reviewsState'>
     <div class="box-header with-border">
       <span class="review-score pull-right"><i class="fa fa-star"></i> {{review.rating}}</span>
       <div class="user-block">
