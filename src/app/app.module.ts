@@ -17,6 +17,7 @@ import { ReviewsComponent } from './restaurant-detail/reviews/reviews.component'
 import { ROUTES } from './app.routes'
 import { SharedModule } from './shared/shared.module'
 import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shopping-cart.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
     ShoppingCartComponent,
     MenuItemComponent,
     ReviewsComponent,
-    OrderSummaryComponent
+    OrderSummaryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserAnimationsModule,
