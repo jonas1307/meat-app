@@ -9,7 +9,7 @@ import { MenuItem } from './menu-item.model';
     trigger('menuItemAppeared', [
       state('ready', style({ opacity: 1 })),
       transition('void => ready', [
-        style({ opacity: 0, transform: 'translateY(-20px)' }),
+        style({ opacity: 0, transform: 'translateX(-20px)' }),
         animate('300ms 0s ease-in')
       ])
     ])
