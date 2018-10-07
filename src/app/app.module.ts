@@ -1,5 +1,6 @@
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { HttpModule } from '@angular/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -32,11 +33,12 @@ import { ShoppingCartComponent } from './restaurant-detail/shopping-cart/shoppin
     OrderSummaryComponent
   ],
   imports: [
+    BrowserAnimationsModule,
     BrowserModule,
+    CoreModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { preloadingStrategy: PreloadAllModules }),
-    SharedModule,
-    CoreModule
+    SharedModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' }
