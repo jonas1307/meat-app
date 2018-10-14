@@ -1,5 +1,6 @@
 import { Express } from 'express'
 import { handleAuthentication } from './auth'
+import { handleAuthorization } from './authz'
 import * as jsonServer from 'json-server';
 import * as fs from 'fs'
 import * as https from 'https'
@@ -17,6 +18,7 @@ server.use(jsonServer.bodyParser)
 
 // Login middleware
 server.post('/login', handleAuthentication)
+server.use('/orders', handleAuthorization)
 
 // Use default router
 server.use(router)
