@@ -10,7 +10,7 @@ export class InputComponent implements OnInit, AfterContentInit {
   input: any
 
   @Input() errorMessage: string
-
+  @Input() showTip: boolean = true
   @Input() label: string
 
   @ContentChild(NgModel) model: NgModel
