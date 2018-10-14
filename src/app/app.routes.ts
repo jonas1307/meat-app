@@ -11,9 +11,9 @@ import { LoginGuard } from "./security/login/login.guard";
 
 export const ROUTES: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login/:to', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'about', loadChildren: './about/about.module#AboutModule' },
-  { path: 'restaurants', component: RestaurantsComponent },
   {
     path: 'restaurants/:id', component: RestaurantDetailComponent,
     children: [
@@ -22,6 +22,7 @@ export const ROUTES: Routes = [
       { path: 'reviews', component: ReviewsComponent }
     ]
   },
+  { path: 'restaurants', component: RestaurantsComponent },
   {
     path: 'order', loadChildren: './order/order.module#OrderModule',
     canLoad: [LoginGuard]

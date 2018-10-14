@@ -13,8 +13,8 @@ export class LoginService {
 
     constructor(private http: HttpClient, private router: Router) { }
 
-    handleLogin(): any {
-        this.router.navigate(['/login'])
+    handleLogin(path?: string): any {
+        this.router.navigate(['/login', path])
     }
 
     isLoggedIn(): boolean {
