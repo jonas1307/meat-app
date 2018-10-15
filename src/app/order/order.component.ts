@@ -5,6 +5,7 @@ import { RadioOption } from '../shared/radio/radio-option.model';
 import { OrderService } from './order.service';
 import { CartItem } from '../restaurant-detail/shopping-cart/shopping-cart-item.model';
 import { Order, OrderItem } from './order.model';
+import 'rxjs/add/operator/do';
 
 @Component({
   selector: 'mt-order',
@@ -20,8 +21,14 @@ export class OrderComponent implements OnInit {
 
   delivery: number = 8
 
+  orderId: string = undefined
+
   itemsValue(): number {
     return this.orderService.itemsValue()
+  }
+
+  isOrderCompleted(): boolean {
+    return this.orderId !== undefined
   }
 
   paymentOptions: RadioOption[] = [
@@ -81,11 +88,11 @@ export class OrderComponent implements OnInit {
     order.orderItems = this.cartItems()
       .map((item: CartItem) => new OrderItem(item.quantity, item.menuItem.id))
 
-    this.orderService.checkOrder(order).subscribe((orderId: string) => {
-      this.router.navigate(['/order-summary'])
-      this.orderService.clear()
-    })
-
-    console.log(order)
+    this.orderService.checkOrder(order)
+      .do((orderId: string) => this.orderId = orderId)
+      .subscribe((orderId: string) => {
+        this.router.navigate(['/order-summary'])
+        this.orderService.clear()
+      })
   }
 }
