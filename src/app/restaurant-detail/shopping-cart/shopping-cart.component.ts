@@ -1,11 +1,11 @@
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { ShoppingCartService } from './shopping-cart.service';
-import { CartItem } from './shopping-cart-item.model';
 
 @Component({
   selector: 'mt-shopping-cart',
   templateUrl: './shopping-cart.component.html',
+  preserveWhitespaces: true,
   animations: [
     trigger('row', [
       state('ready', style({ opacity: 1 })),
